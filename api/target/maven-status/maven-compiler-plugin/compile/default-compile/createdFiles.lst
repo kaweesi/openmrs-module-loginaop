@@ -1,6 +1,0 @@
-org/openmrs/module/loginaop/Item.class
-org/openmrs/module/loginaop/LoginAOPConfig.class
-org/openmrs/module/loginaop/api/dao/LoginAOPDao.class
-org/openmrs/module/loginaop/api/impl/LoginAOPServiceImpl.class
-org/openmrs/module/loginaop/LoginAOPActivator.class
-org/openmrs/module/loginaop/api/LoginAOPService.class
