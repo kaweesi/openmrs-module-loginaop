@@ -11,4 +11,12 @@
 	<packaging>jar</packaging>
 	<name>Login AOP API</name>
 	<description>API project for Login AOP</description>
+	
+	<dependencies>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>4.1.4.RELEASE</version>
+		</dependency>
+	</dependencies>
 </project>

@@ -55,4 +55,8 @@
             </list>
         </property>
     </bean>
+    
+    <aop:aspectj-autoproxy>
+ 		<aop:include name="loginaop.LoginAdvice"/>
+ 	</aop:aspectj-autoproxy>
 </beans>

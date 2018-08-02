@@ -9,55 +9,20 @@
  */
 package org.openmrs.module.loginaop.api;
 
-import org.junit.Before;
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.openmrs.User;
-import org.openmrs.api.UserService;
-import org.openmrs.module.loginaop.Item;
-import org.openmrs.module.loginaop.api.dao.LoginAOPDao;
-import org.openmrs.module.loginaop.api.impl.LoginAOPServiceImpl;
-import static org.mockito.Mockito.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import org.openmrs.api.context.Context;
+import org.openmrs.test.BaseModuleContextSensitiveTest;
 
 /**
  * This is a unit test, which verifies logic in LoginAOPService. It doesn't extend
  * BaseModuleContextSensitiveTest, thus it is run without the in-memory DB and Spring context.
  */
-public class LoginAOPServiceTest {
-	
-	@InjectMocks
-	LoginAOPServiceImpl basicModuleService;
-	
-	@Mock
-	LoginAOPDao dao;
-	
-	@Mock
-	UserService userService;
-	
-	@Before
-	public void setupMocks() {
-		MockitoAnnotations.initMocks(this);
-	}
+public class LoginAOPServiceTest extends BaseModuleContextSensitiveTest {
 	
 	@Test
-	public void saveItem_shouldSetOwnerIfNotSet() {
-		//Given
-		Item item = new Item();
-		item.setDescription("some description");
-		
-		when(dao.saveItem(item)).thenReturn(item);
-		
-		User user = new User();
-		when(userService.getUser(1)).thenReturn(user);
-		
-		//When
-		basicModuleService.saveItem(item);
-		
-		//Then
-		assertThat(item, hasProperty("owner", is(user)));
+	public void serviceTest() {
+		assertNotNull(Context.getService(LoginAOPService.class));
 	}
 }
